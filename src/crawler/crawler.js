@@ -52,20 +52,20 @@ const filmContentCrawler = async () => {
 		}
 
 		//Expading the film list
-		var moreBut = await page.$('.tray-more')	
-		await new Promise((resolve, reject) => {
-			let i =0;
-			const interval = setInterval(async ()=> {
+		// var moreBut = await page.$('.tray-more')	
+		// await new Promise((resolve, reject) => {
+		// 	let i =0;
+		// 	const interval = setInterval(async ()=> {
 
-				if(i === 2) {
-					resolve("done")
-					return clearInterval(interval)
-				}
+		// 		if(i === 2) {
+		// 			resolve("done")
+		// 			return clearInterval(interval)
+		// 		}
 
-				moreBut.click()
-				i++
-			}, 3000)
-		})
+		// 		moreBut.click()
+		// 		i++
+		// 	}, 3000)
+		// })
 
 		const films = await page.evaluate(() => {
 			let filmEndpointList = document.querySelectorAll('.tray-item > a')

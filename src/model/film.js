@@ -26,6 +26,13 @@ const filmSchema = mongoose.Schema({
 	}
 })
 
+filmSchema.methods.toJSON = function () {
+	const filmObject = this.toObject()
+	delete filmObject.imageUrl
+	delete filmObject.endpoint
+	delete filmObject.image
+	return filmObject
+}
 
 const Film = mongoose.model('Film', filmSchema)
 
