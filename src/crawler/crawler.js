@@ -49,7 +49,7 @@ const filmContentCrawler = async () => {
 			})
 		}
 
-		Expading the film list
+		//Expading the film list
 		var moreBut = await page.$('.tray-more')	
 		await new Promise((resolve, reject) => {
 			let i =0;
