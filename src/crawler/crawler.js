@@ -21,7 +21,7 @@ const filmContentCrawler = async () => {
 				width: 1280,
 				height: 568
 			},
-			args: ['--no-sandbox']
+			args: ['--no-sandbox', '--disable-setuid-sandbox']
 		})
 
 		const page = await browser.newPage()
