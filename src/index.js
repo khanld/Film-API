@@ -62,7 +62,7 @@ app.get('/', async (req, res) => {
 		return await browser.close()
 
 	} catch (e) {
-		console.log(e)
+		res.status(500).send(e)
 	}	
 
 })
