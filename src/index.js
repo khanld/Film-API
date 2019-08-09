@@ -1,19 +1,14 @@
 const express = require('express')
 const app = express()
-require('./db/mongoose')
-const Film = require('./model/film')
 const port = process.env.PORT 
-const cron = require('./cronjob/cron')
 const puppeteer = require('puppeteer')
-const filmContentCrawler = require('./crawler/crawler')
-
 
 
 app.get('/', async (req, res) => {
 
 	try {
-
-			const browser = await puppeteer.launch({
+		const browser = await puppeteer.launch({
+			headless: true,
 			args: ['--no-sandbox', '--disable-setuid-sandbox']
 		})
 
@@ -60,6 +55,8 @@ app.get('/', async (req, res) => {
 			
 			return films
 		})
+
+
 		console.log(films.length)
 		res.send(films)
 		return await browser.close()
@@ -75,3 +72,17 @@ app.listen(port, () => {
 })
 
 
+
+
+
+
+
+
+
+
+
+
+// require('./db/mongoose')
+// const Film = require('./model/film')
+// const cron = require('./cronjob/cron')
+// const filmContentCrawler = require('./crawler/crawler')
