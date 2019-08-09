@@ -1,8 +1,5 @@
 {
   "name": "web1",
-  "engines": {
-    "node": "10.16.0"
-  },
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
