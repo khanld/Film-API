@@ -54,6 +54,8 @@ const filmContentCrawler = async () => {
 			})
 
 				film.content = film.content.replace(/\n|\\/g, '')
+
+
 				return resolve()
 			})
 		}
