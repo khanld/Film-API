@@ -4,10 +4,12 @@ require('./db/mongoose')
 const Film = require('./model/film')
 const port = process.env.PORT 
 const cron = require('./cronjob/cron')
+const filmContentCrawler = require('./crawler/crawler')
 
-cron.start()
+
 
 app.get('/', async (req, res) => {
+	await filmContentCrawler()
 	const films  = await Film.find({})
 	res.send(films)
 })

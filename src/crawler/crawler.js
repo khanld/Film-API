@@ -123,7 +123,5 @@ const filmContentCrawler = async () => {
 	}	
 
 }
-console.log("hello")
-filmContentCrawler()
 
 module.exports = filmContentCrawler
