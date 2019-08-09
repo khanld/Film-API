@@ -102,7 +102,7 @@ const filmContentCrawler = async () => {
 			return films
 		})
 
-		console.log(films[0])
+		console.log('from crawler', films[0])
 		const filmsPromise = films.map((film) => {
 			 return goEachFilmPage(film)
 		})
