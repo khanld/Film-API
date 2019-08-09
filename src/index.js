@@ -6,10 +6,10 @@ const port = process.env.PORT
 const cron = require('./cronjob/cron')
 const filmContentCrawler = require('./crawler/crawler')
 
-
+filmContentCrawler()
 
 app.get('/', async (req, res) => {
-	await filmContentCrawler()
+
 	const films  = await Film.find({})
 	res.send(films)
 })
