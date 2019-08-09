@@ -21,9 +21,7 @@ const filmContentCrawler = async () => {
 				width: 1280,
 				height: 568
 			},
-			args: [ '--no-sandbox',
-       		 '--disable-setuid-sandbox',
-        	'--disable-dev-shm-usage']
+			args: ['--no-sandbox']
 		})
 
 		const page = await browser.newPage()
@@ -104,7 +102,7 @@ const filmContentCrawler = async () => {
 			return films
 		})
 
-		
+		console.log(films[0])
 		const filmsPromise = films.map((film) => {
 			 return goEachFilmPage(film)
 		})
