@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express()
 const port = process.env.PORT 
-const puppeteer = require('puppeteer')
+const puppeteer = require('puppeteer-core')
 
 
 app.get('/', async (req, res) => {
